@@ -3,9 +3,7 @@ function Footer(){
     return <footer>
             <hr />
             <ul className="footer-text">
-            <li>Lorem, ipsum dolor.</li>
-            <li>Lorem, ipsum dolor.</li>
-            <li>Lorem, ipsum dolor.</li>
+            <li>&copy; AtIelts 2025</li>
             </ul>
         </footer>
 }

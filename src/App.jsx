@@ -17,7 +17,7 @@ function App() {
               <>
                 <section className="intro">
                   <h1 className="introHeading">Level Up Your <span>IELTS</span> Here.</h1>
-                  <h2>Game-Like Exam Preparation With Practice Tests</h2>
+                  <h2>Game-Like Exam Preparation With IELTS Skills.</h2>
                   <Link to="/roadmap" className="beginButton">BEGIN</Link>
                 </section>
                 <section className="about">
