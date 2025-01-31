@@ -11,7 +11,7 @@ function Header(){
          <h1>AtIelts</h1>
     </a>
     <ul class="links">
-              <li class="link">Practice Test Library
+              <li class="link">Practice Library
                    <i class="fa fa-angle-down" ></i>
                    <ul class="hoverDropdown">
                         <li>IELTS Reading Tests</li>
@@ -26,9 +26,6 @@ function Header(){
               <li class="link">Chatroom</li>
     </ul>
     <div class="account">
-     <div class="background-switcher"id="backgroundBtn">
-          <i class="fa fa-moon-o"></i>
-     </div>
      <span id="logIn">
           Login
      </span>
