@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
+
+.App{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 70px auto auto;
+  grid-template-areas: "header"
+                       "main"
+                       "footer";
+  background: var(--gray-80);
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main{
+  grid-area: main;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 700px 100px;
+  animation: appear 2s linear;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes appear{
+  from{
+       opacity: 0;
+  }
+  to{
+       opacity: 1;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main .intro{
   display: flex;
-  flex-direction: column;
+  justify-content: center;  
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+  font-family: serif;
+  position: relative;
+  text-align: center;
   color: white;
 }
+main .intro span {
+  color: red;
+}
+main .introHeading{
+  font-size: 4rem;
+}
+main .intro > a{
+ top: 15%;
+ background-color: var(--purple-light);
+ width: 400px;
+ height: 100px;
+ font-size: 1.8rem;
+ color: white;
+ font-weight: bold;
+ cursor: pointer;
+ border-radius: 25px 0px 25px 25px;
+ text-decoration: none;
+ transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: relative;
 
-.App-link {
-  color: #61dafb;
+}
+main .intro > a:hover{
+  background-color: white;
+  color: var(--purple-light);
+}
+.card h1{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card p {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 1.2rem;
+}
+.card hr{
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+@media (max-width: 840px) {
+  main .intro{
+       overflow: hidden;
   }
-  to {
-    transform: rotate(360deg);
+  main .introHeading{
+       font-size: 3rem;
+  }
+  main .intro a {
+       width: 200px;
+       height: 100px;
+  }
+}
+@media (max-width: 400px){
+  body{
+       grid-template-rows: 60px 2100px 80px;
   }
 }
