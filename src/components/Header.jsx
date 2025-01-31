@@ -6,33 +6,33 @@ import App from '../App'
 function Header(){
     return <header>
      <ResponsiveDropdown/>
-    <a href="#"class="logo">
-         <img src="Photos/lightlogo.png" alt=""/>
+    <Link to="/" className="logo">
+         <img src={require('../assets/logo.png')} alt=""/>
          <h1>AtIelts</h1>
-    </a>
-    <ul class="links">
-              <li class="link">Practice Library
-                   <i class="fa fa-angle-down" ></i>
-                   <ul class="hoverDropdown">
+    </Link>
+    <ul className="links">
+              <li className="link">Practice Library
+                   <i className="fa fa-angle-down" ></i>
+                   <ul className="hoverDropdown">
                         <li>IELTS Reading Tests</li>
                         <li>IELTS Listening Tests</li>
                         <li>IELTS Writing Tests</li>
                         <li>IELTS Speaking Tests</li>
                    </ul>
               </li>
-              <li class="link">
+              <li className="link">
                 <Link to="/roadmap" >RoadMap</Link>
                 </li>
-              <li class="link">Chatroom</li>
+              <li className="link">Forum</li>
     </ul>
-    <div class="account">
+    <div className="account">
      <span id="logIn">
           Login
      </span>
      <div id="signUp" className='signUp'>
           SignUp
      </div>
-     <div class="dashboard">
+     <div className="dashboard">
 
      </div>
      </div>
@@ -56,22 +56,22 @@ function ResponsiveDropdown() {
             <i className="fa fa-bars" id="menuBtn" onClick={toggleMenu}></i>
             {menuOpen && (
                 <ul className="menu" id="menu">
-                    <li className="dropdown" id="practicetestDropdown" onClick={togglePracticeTestDropdown}>
+                    <Link to='/' className="dropdown" id="practicetestDropdown" onClick={togglePracticeTestDropdown}>
                         Practice Test Library
                         <i className={`fa fa-angle-${practiceTestDropdownOpen ? 'up' : 'down'}`} id="practicetestarrow"></i>
-                    </li>
+                    </Link>
                     {practiceTestDropdownOpen && (
                         <ul className="dropdown-content" id="practicetestDropdownList">
-                            <li>IELTS Reading Practice Tests</li>
-                            <li>IELTS Listening Practice Tests</li>
-                            <li>IELTS Writing Practice Tests</li>
-                            <li>IELTS Speaking Practice Tests</li>
+                            <Link to='/'>IELTS Reading Practice Tests</Link>
+                            <Link to='/'>IELTS Listening Practice Tests</Link>
+                            <Link to='/'>IELTS Writing Practice Tests</Link>
+                            <Link to='/'>IELTS Speaking Practice Tests</Link>
                         </ul>
                     )}
-                    <li className="dropdown" id="examDateDropdown">
-                        Begin Here!
-                    </li>
-                    <li>Forum</li>
+                    <Link to="/RoadMap" className="dropdown" id="examDateDropdown">
+                        RoadMap
+                    </Link>
+                    <Link to='/'>Forum</Link>
                 </ul>
             )}
         </div>

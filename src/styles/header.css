@@ -172,22 +172,23 @@ header .menuheader {
               opacity: 1;
          }
     }
-
-    header .menuheader .menu li {
+    header .menuheader .menu .dropdown i{
+        display: flex;
+        position: relative;
+        font-size: 25px;
+        top: 0;
+    }
+    header .menuheader .menu a {
          height: 50px;
          display: flex;
          align-items: center;
          cursor: pointer;
          font-size: 1rem;
+         color: white;
+         text-decoration: none;
          
     }
-    header .menuheader .menu li i {
-        display: flex;
-        position: relative;
-        top: 0;
-        font-size: 25px;
-    }
-    header .menuheader .menu li:hover{
+    header .menuheader .menu a:hover{
          background-color: aliceblue;
          color: black;
     }
