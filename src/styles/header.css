@@ -2,7 +2,7 @@ header{
     grid-area: header;
     background: var(--theme-color);
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 20% 1fr 20%;
     color: white;
     position: fixed;
     height: 70px;
@@ -14,6 +14,7 @@ header{
     margin-inline: auto;
     border-radius: 0 0 15px 15px;
     border-bottom: 2px solid var(--purple-light);
+    box-shadow: 0 0 15px var(--purple-light);
 }
 header .logo{
     grid-column: 1;
@@ -75,7 +76,9 @@ header .links .link .hoverDropdown{
     position: absolute;
     top: 100%;
     left: 0;
-    box-shadow: 0px 0px 20px #97a9bb;
+    box-shadow: 0px 20px 20px #97a9bb;
+    border: var(--purple-light) 2px solid;
+    border-top: transparent;
     list-style: none;
     display: none;
     z-index: 2;

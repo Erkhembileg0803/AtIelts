@@ -11,6 +11,11 @@ function Header(){
          <h1>AtIelts</h1>
     </Link>
     <ul className="links">
+             <li className="link"><Link to='/'>Home</Link></li>
+              <li className="link">
+                <Link to="/roadmap" >RoadMap</Link>
+                </li>
+              <li className="link">Forum</li>
               <li className="link">Practice Library
                    <i className="fa fa-angle-down" ></i>
                    <ul className="hoverDropdown">
@@ -20,10 +25,6 @@ function Header(){
                         <li>IELTS Speaking Tests</li>
                    </ul>
               </li>
-              <li className="link">
-                <Link to="/roadmap" >RoadMap</Link>
-                </li>
-              <li className="link">Forum</li>
     </ul>
     <div className="account">
      <span id="logIn">
@@ -56,6 +57,7 @@ function ResponsiveDropdown() {
             <i className="fa fa-bars" id="menuBtn" onClick={toggleMenu}></i>
             {menuOpen && (
                 <ul className="menu" id="menu">
+                    <Link to='/'>Home</Link>
                     <Link to='/' className="dropdown" id="practicetestDropdown" onClick={togglePracticeTestDropdown}>
                         Practice Test Library
                         <i className={`fa fa-angle-${practiceTestDropdownOpen ? 'up' : 'down'}`} id="practicetestarrow"></i>
