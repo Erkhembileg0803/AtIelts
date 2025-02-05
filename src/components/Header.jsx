@@ -8,7 +8,7 @@ function Header(){
      <ResponsiveDropdown/>
     <Link to="/" className="logo">
          <img src={require('../assets/logo.png')} alt=""/>
-         <h1>AtIelts</h1>
+         <h1>ATIELTS</h1>
     </Link>
     <ul className="links">
              <li className="link"><Link to='/'>Home</Link></li>

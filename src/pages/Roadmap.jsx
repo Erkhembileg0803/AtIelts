@@ -5,21 +5,23 @@ function RoadMap(){
     return <div className="RoadMap">
         <Header/>
             <div className="map">
-                <FirstLine/>
-
+                <FirstLine id='firstline'/>
+                <SecondLine id='secondline'/>
+                <FirstLine id='thirdline'/>
+                <SecondLine/>
             </div>
             <Footer/>
         </div>
 }
 export default RoadMap;
 
-function FirstLine(){
+function FirstLine(props){
     const firstline = []
     function generateButtons(){
         for(let i = 1; i <= 8; i++ ){
             firstline.push(
                 <div className="levelstand">
-                <div className="outer">{i}</div>
+                <div className="outer"id={`${props.id}${i}`}>{i}</div>
                 <div className="inner"></div>
                 <div className="plate"></div>
                 </div>
@@ -33,7 +35,24 @@ function FirstLine(){
     </div>
     </>
 }
-
+function SecondLine(props){
+    const secondline = []
+    function generateButtons(){
+        for(let i = 1; i <= 8; i++){
+            secondline.unshift(
+                <div className="levelstand">
+                <div className="outer"id={`${props.id}${i}`}>{i}</div>
+                <div className="inner"></div>
+                <div className="plate"></div>
+                </div>
+            )
+        }
+    }
+    generateButtons()
+    return <div className='secondline'>
+        {secondline}
+    </div>
+}
 function Button(props){
  
     return <div className="levelstand">
