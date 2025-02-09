@@ -1,0 +1,109 @@
+
+header{
+     grid-area: header;
+     display: grid;
+     grid-template-columns: 20% 80%;
+     grid-template-rows: 1fr;
+     position: fixed;
+     align-items: center;
+     height: 100px;
+     width: 100%;
+     color: var(--white);
+}
+header .logo{
+     grid-column: 1;
+     display: flex;align-items: center;
+     font-size: 2rem;
+}
+header .logo img{
+     width: 110px;
+     height: 110px;
+     position: relative;
+     right: -20px;
+}
+header .links{
+     grid-column: 2;
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+     gap: 40px;
+     width: 95%;
+     font-size: 1.4rem;
+}
+header .links div{
+     display: flex;
+     gap: 40px;
+}
+header .links span{
+     background-color: var(--button-gray);
+     width: 80px;
+     height: 30px;
+     border-radius: 15px;
+     color: black;
+     display: flex;align-items: center;justify-content: center;
+     cursor: pointer;
+}
+
+.RoadmapLink{
+     color: var(--light-green);
+}
+.LibraryLink{
+     display: flex; gap: 5px;
+}
+.Home{
+     display: flex;gap: 5px;align-items: center;
+}
+.LibraryLink i{
+     transform: rotate(35deg);
+}
+header .links div a{
+     position: relative;
+}
+header .links div a::before{
+     content: '';
+     background-color: white;
+     width: 0;
+     transition: width 0.2s ease-in-out;
+     height: 3px;
+     top: 100%;
+     position: absolute;
+}
+header .links div a:hover::before{
+     width: 100%;
+}
+header  .responsivebtn, header .responsivemenu{
+     display: none;
+}
+
+@media only screen and (max-width:940px){
+     header .links div,header .logo{
+          display: none;
+     }
+     header .responsivebtn{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+     }
+     header .responsivebtn i{
+          font-size: 3rem;
+          cursor: pointer;
+          
+     }
+     header .responsivemenu{
+          display: flex;
+          position: absolute;
+          width: 100%;
+          height: 230px;
+          top: 100%;
+          background-color: var(--primary);
+          border-bottom: 1px solid white;
+          flex-direction: column;
+          padding: 15px;
+     }
+     header .responsivemenu a{
+          height: calc(100% / 4);
+          width: 100%;display: flex;align-items: center;
+          font-size: 1.5rem;
+
+     }
+}
