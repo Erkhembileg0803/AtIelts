@@ -5,10 +5,10 @@
   font-family: "Pixelify Sans", serif;;
 }
 :root{
-  --primary: #1E1E1E;
+  --primary: #8f7A6E;
   --light-green: #BFFF00;
-  --button-gray: #D9D9D9;
-  --white: #ffffff;
+  --dark-red: #A41f13;
+  --white: #faf5f1;
 }
 a{
   text-decoration: none;

@@ -2,6 +2,8 @@ import '../styles/header.css'
 import Logo from '../assets/logo.png';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+
+
 export default function Header(){
      const [menu, setMenu] = useState(false);
      function toggleMenu() {
@@ -10,7 +12,7 @@ export default function Header(){
      return <header>
           {menu && <ResponsiveMenu/>}
           <div className="responsivebtn"><i class="fa fa-bars"onClick={toggleMenu}></i></div>
-          <Link className="logo">
+          <Link to='/'className="logo">
                <img src={Logo} alt="" />
                ATIELTS
           </Link>
