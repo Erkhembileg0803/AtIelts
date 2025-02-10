@@ -10,7 +10,11 @@ export default function Header(){
           setMenu(!menu);
      }
      return <header>
-          {menu && <ResponsiveMenu/>}
+          <div className="responsivemenu"style={{
+               height: menu ? "230px" : "0px", opacity: menu ? "1" : '0',
+          }}>
+          {menu && <Links/>}
+          </div>
           <div className="responsivebtn"><i class="fa fa-bars"onClick={toggleMenu}></i></div>
           <Link to='/'className="logo">
                <img src={Logo} alt="" />
@@ -41,9 +45,4 @@ function Links(props){
      <Link>Forum</Link> 
      
      </>
-}
-function ResponsiveMenu(props){
-     return <div className="responsivemenu">
-          <Links/>
-     </div>
 }

@@ -12,9 +12,21 @@ function App() {
 }
 
 function HomePage(){
-  return <main>
-      
-  </main>
+  return <div className='homepage'>
+      <div className="intro">
+        <span className="textcontainer">
+          <span className='text'>
+          <h1>Game-Like</h1>
+          <p>Level up your <span>IELTS</span> skills through fun and challenging ways.</p>
+          </span>
+          <Link><i class="fa fa-angle-double-right"></i><span>Begin</span></Link>
+        </span>
+        <span className="images">
+          <div className="image"></div>
+          <div className="image"></div>
+        </span>
+      </div>
+  </div>
 }
 function Router(){
   return <BrowserRouter>

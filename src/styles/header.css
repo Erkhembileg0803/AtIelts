@@ -4,16 +4,16 @@ header{
      display: grid;
      grid-template-columns: 20% 80%;
      grid-template-rows: 1fr;
-     position: fixed;
      align-items: center;
-     height: 100px;
      width: 100%;
+     height: 100px;
      color: var(--white);
 }
 header .logo{
      grid-column: 1;
      display: flex;align-items: center;
      font-size: 2rem;
+     text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
 }
 header .logo img{
      width: 110px;
@@ -36,12 +36,17 @@ header .links div{
 }
 header .links span{
      background-color: var(--dark-red);
-     width: 80px;
-     height: 30px;
+     width: 90px;
+     height: 32px;
      border-radius: 15px;
      color: var(--white);
      display: flex;align-items: center;justify-content: center;
      cursor: pointer;
+     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+     transition: all 0.2s ease;
+}
+header .links span:hover{
+     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
 }
 
 .RoadmapLink{
@@ -56,11 +61,15 @@ header .links span{
 }
 .LibraryLink i{
      transform: rotate(35deg);
+     position: relative;
+}
+.LibraryLink:hover i{
+     bottom: 5px;
+     left: 5px;
 }
 header .links div a{
      position: relative;
-     text-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
-   
+     text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
 }
 header .links div a::before{
      content: '';
@@ -74,11 +83,18 @@ header .links div a::before{
 header .links div a:hover::before{
      width: 100%;
 }
+
 header  .responsivebtn, header .responsivemenu{
      display: none;
 }
 
 @media only screen and (max-width:940px){
+     header{
+          position: fixed;
+          z-index: 999;
+          background-color: var(--primary);
+          border-bottom: 1px solid white;
+     }
      header .links div,header .logo{
           display: none;
      }
@@ -96,12 +112,13 @@ header  .responsivebtn, header .responsivemenu{
           display: flex;
           position: absolute;
           width: 100%;
-          height: 230px;
           top: 100%;
           background-color: var(--primary);
           border-bottom: 1px solid white;
           flex-direction: column;
           padding: 15px;
+          color: white;
+          transition: all 0.3s linear;
      }
      header .responsivemenu a{
           height: calc(100% / 4);
@@ -109,6 +126,7 @@ header  .responsivebtn, header .responsivemenu{
           font-size: 1.5rem;
      }
      header .responsivemenu a:hover{
-          background-color: gray;
+          background-color: var(--white);
+          color: var(--dark-red);
      }
 }
