@@ -36,13 +36,12 @@ function Links(props){
      <i class="fa fa-home"></i>
      Home
      </Link> 
-     <Link className='RoadmapLink'>
+     <Link to='/play' className='RoadmapLink'>
      <i class='fas fa-gamepad'></i>
      LevelUP!</Link> 
      <Link className='LibraryLink'>Library
      <i class="fa fa-arrow-up"></i>
      </Link> 
      <Link>Forum</Link> 
-     
      </>
 }

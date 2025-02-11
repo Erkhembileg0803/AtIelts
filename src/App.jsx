@@ -2,12 +2,10 @@ import Header from './components/header'
 import './App.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
+import PlayPage from './pages/playpage';
 function App() {
   return (
-    <div className='App'>
     <Router/>
-    </div>
   );
 }
 
@@ -16,8 +14,8 @@ function HomePage(){
       <div className="intro">
         <span className="textcontainer">
           <span className='text'>
-          <h1>Game-Like</h1>
-          <p>Level up your <span>IELTS</span> skills through fun and challenging ways.</p>
+          <h1><span>IELTS</span> ARCADE</h1>
+          <p>Level up your IELTS skills through fun and challenging ways.</p>
           </span>
           <Link><i class="fa fa-angle-double-right"></i><span>Begin</span></Link>
         </span>
@@ -33,12 +31,14 @@ function Router(){
     <Routes>
       <Route path='/' element={
         <>
+          <div className='App'>
         <Header/>
         <HomePage/>
+         </div>
         </>
       }>
-
       </Route>
+      <Route path='/play' element={<PlayPage/>}></Route>
       </Routes>    
   </BrowserRouter>
 }

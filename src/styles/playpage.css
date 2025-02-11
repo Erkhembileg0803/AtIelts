@@ -1,0 +1,33 @@
+.playpage{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 15% 70% 15%;
+    overflow-x: hidden;
+}
+.playpage .logo{
+    grid-row: 1;
+    width: 150px;
+}
+.playpage .islandContainer{
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.playpage .islandContainer img{
+    width: 400px;
+    transition: all 0.6s ease;
+}
+.playpage .islandContainer img:hover{
+    transform: scale(1.2);
+
+    cursor: pointer;
+}
+.playpage nav{
+    grid-row: 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 5px;
+    gap: 15px;
+}
