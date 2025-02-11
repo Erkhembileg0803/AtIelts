@@ -1,27 +1,23 @@
 .playpage{
     height: 100vh;
     display: grid;
-    grid-template-rows: 15% 70% 15%;
+    grid-template-rows: 15% 1fr 15%;
     overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: var(--white);
+    scrollbar-color: transparent transparent;
 }
 .playpage .logo{
     grid-row: 1;
     width: 150px;
 }
-.playpage .islandContainer{
+.playpage .skillsContainer{
     grid-row: 2;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.playpage .islandContainer img{
-    width: 400px;
-    transition: all 0.6s ease;
-}
-.playpage .islandContainer img:hover{
-    transform: scale(1.2);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    overflow-x: auto;
+    user-select: none;
 
-    cursor: pointer;
 }
 .playpage nav{
     grid-row: 3;
