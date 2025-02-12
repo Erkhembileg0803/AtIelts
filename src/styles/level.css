@@ -1,7 +1,7 @@
 .skill{
     display: grid;
     justify-content: space-around;
-    grid-template-columns: repeat(12, 200px);
+    grid-template-columns: repeat(13, 200px);
     width: 100%;
 }
 
