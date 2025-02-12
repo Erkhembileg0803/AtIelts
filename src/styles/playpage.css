@@ -1,0 +1,62 @@
+.playpage{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 15% 1fr 15%;
+    overflow-x: hidden;
+    background-color: #eee4e1;
+}
+.playpage .logo a{
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    font-size: 4rem;
+    color: black;
+    width: 20%;
+}
+.playpage .logo img{
+    width: 200px;
+    position: relative;
+    left: 50px;
+}
+.playpage .skillsContainer{
+    grid-row: 2;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    overflow-x: auto;
+    user-select: none;
+    width: auto;
+    cursor: pointer;
+    scrollbar-color: transparent transparent;
+}
+.playpage nav{
+    grid-row: 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 5px;
+    gap: 15px;
+}
+
+@media only screen and (max-width:760px){
+    .playpage nav{
+        flex-wrap: wrap;
+        height: 200px;
+    }
+    .playpage .logo{
+        align-items: flex-start;
+    }
+    .playpage .logo img{
+        width: 120px;
+        left: 30px;
+    }
+    .playpage .logo a{
+        font-size: 3rem;
+        height: 100%;
+    }
+    .playpage{
+        grid-template-rows: 12% 50% 10%;
+    }
+    .playpage .skillsContainer{
+        height: 50vh;
+    }
+}
