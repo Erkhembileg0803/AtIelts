@@ -3,6 +3,8 @@ import './App.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import PlayPage from './pages/playpage';
+import { useRef } from 'react';
+
 function App() {
   return (
     <Router/>
@@ -10,7 +12,11 @@ function App() {
 }
 
 function HomePage(){
-  return <div className='homepage'>
+  const homepage = useRef(null)
+  const handleMouseDown = e => {
+    e.preventDefault();
+  } 
+  return <div className='homepage'ref={homepage} onMouseDown={handleMouseDown}>
       <div className="intro">
         <span className="textcontainer">
           <span className='text'>

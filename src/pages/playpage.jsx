@@ -1,55 +1,74 @@
 import '../styles/playpage.css'
 import MenuButton from '../components/Menubutton'
-import Logo from '../assets/logo.png'
 import Level from '../components/level'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 export default function Islands(){
-    const containerRef = useRef(null);
-    const [isMouseDown, setIsMouseDown] = useState(false);
-    const [startX, setStartX] = useState(0)
-    const [scrollLeft, setScrollLeft] = useState(0)
+const containerRef = useRef(null);
+const [isMouseDown, setIsMouseDown] = useState(false);
+const [startX, setStartX] = useState(0);
+const [scrollLeft, setScrollLeft] = useState(0);
+const animationRef = useRef(null); // Stores animation frame ID
 
- const HandleMouseDown =(e) => {
+const HandleMouseDown = (e) => {
     setIsMouseDown(true);
-    setStartX(e.pageX - - containerRef.current.offsetLeft);
-    setScrollLeft(containerRef.current.scrollLeft)
- }
-   
- const HandleMouseLeave =(e) => {
-    setIsMouseDown(false)
- }
-   
- const HandleMouseUp =(e) => {
-    setIsMouseDown(false)
- }
-   
- const HandleMouseMove =(e) => {
-    if(!isMouseDown) return;
+    setStartX(e.pageX - containerRef.current.offsetLeft);
+    setScrollLeft(containerRef.current.scrollLeft);
+
+};
+
+const HandleMouseLeave = () => {
+    setIsMouseDown(false);
+    cancelAnimationFrame(animationRef.current); // Stop animation
+};
+
+const HandleMouseUp = () => {
+    setIsMouseDown(false);
+    cancelAnimationFrame(animationRef.current); 
+};
+
+const HandleMouseMove = (e) => {
+    if (!isMouseDown) return;
+
     e.preventDefault();
     const x = e.pageX - containerRef.current.offsetLeft;
-    const walk = (x-startX)*2;
-    containerRef.current.scrollLeft = scrollLeft - walk;
- }
- useEffect(() => {
+    const walk = (x - startX) * 2;
+
+
+    cancelAnimationFrame(animationRef.current);
+
+ 
+    animationRef.current = requestAnimationFrame(() => {
+        containerRef.current.scrollLeft = scrollLeft - walk;
+    });
+};
+
+useEffect(() => {
     const container = containerRef.current;
+
     const handleWheel = (e) => {
-        if(e.deltaY !== 0){
-            container.scrollLeft += e.deltaY;
+        if (e.deltaY !== 0) {
             e.preventDefault();
+            cancelAnimationFrame(animationRef.current);
+
+            animationRef.current = requestAnimationFrame(() => {
+                container.scrollLeft += e.deltaY;
+            });
         }
-    }
-    container.addEventListener('wheel',handleWheel);
+    };
+
+    container.addEventListener('wheel', handleWheel);
     return () => {
         container.removeEventListener('wheel', handleWheel);
-    }
-}, [])
-   
+        cancelAnimationFrame(animationRef.current);
+    };
+}, []);
+
 
     return <>
     
         <div className="playpage">
-                <span  className='logo'><Link to='/'><img src={Logo} alt=""/>ATIELTS</Link></span>
+                <span  className='logo'><Link to='/'>ATIELTS</Link></span>
                 <div className="skillsContainer"ref={containerRef}
                 onMouseDown={HandleMouseDown}
                 onMouseLeave={HandleMouseLeave}
@@ -61,13 +80,11 @@ export default function Islands(){
                     <Level length="10" skill="Writing"/>
                 </div>
                 <nav>
-                    <MenuButton abbr="Profile"/>
-                    <MenuButton abbr="Profile"/>
-                    <MenuButton abbr="Profile"/>
-                    <MenuButton abbr="Profile"/>
-                    <MenuButton abbr="Profile"/>
-                    <MenuButton abbr="Profile"/>
-                    <MenuButton abbr="Profile"/>
+                    <MenuButton abbr="character"logo='fas fa-user-alt'/>
+                    <MenuButton abbr="badges"logo='fas fa-medal'/>
+                    <MenuButton abbr="forum" logo='fas fa-user-friends'/>
+                    <MenuButton abbr="home"logo="fa fa-home" link='/'/>
+                    <MenuButton abbr="practice Test Library"logo="fa fa-book"/>
                 </nav>
         </div>
     </>
