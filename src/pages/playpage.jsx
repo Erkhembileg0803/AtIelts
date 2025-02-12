@@ -21,10 +21,13 @@ export default function Islands(){
    
 
     return <>
+    
         <div className="playpage">
                 <img src={Logo} alt="" className='logo'/>
                 <div className="skillsContainer"ref={containerRef}>
-                    <Level/>
+                    <Level length="9" skill="Listening"/>
+                    <Level length="11" skill="Reading"/>
+                    <Level length="10" skill="Writing"/>
                 </div>
                 <nav>
                     <MenuButton abbr="Profile"/>

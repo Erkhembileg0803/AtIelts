@@ -1,7 +1,7 @@
 .skill{
     display: grid;
     justify-content: space-around;
-    grid-template-columns: repeat(20, auto);
+    grid-template-columns: repeat(12, 200px);
     width: 100%;
 }
 
@@ -20,7 +20,8 @@
     width: 50px;
     border-radius: 50%;
     height: 40px;
-    z-index: 2;
+    z-index: 3;
+    cursor: pointer;
 }
 .skill .btnContainer .inner{
     background-color: #FE5454;
@@ -28,13 +29,31 @@
     height: 50px;
     border-radius: 30px;
     top: 42%;
-    z-index: 1;
+    z-index: 2;
 }
 .skill .btnContainer .plate{
     width: 60px;
     height: 45px;
     border-radius: 50%;
-    background-color: gray;
+    background-color: var(--primary);
     z-index: 0;
     top: 48%;
+    z-index: 1;
+}
+.skill .btnContainer::after{
+    content: '';
+    background-color: red;
+    width: 100%;
+    right: 0;
+    position: absolute;
+    height: 8px;
+    top: 55%;
+    z-index: 0;
+}
+#LevelZero::after{
+    width: 60%;
+}
+#Finish::after{
+    width: 50%;
+    left: 0;
 }

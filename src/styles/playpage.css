@@ -4,7 +4,7 @@
     grid-template-rows: 15% 1fr 15%;
     overflow-x: hidden;
     overflow-y: hidden;
-    background-color: var(--white);
+    background-color: #eee4e1;
     scrollbar-color: transparent transparent;
 }
 .playpage .logo{
