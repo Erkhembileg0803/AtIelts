@@ -1,4 +1,4 @@
-import '../styles/playpage.css'
+import '../styles/PlayPage/playpage.css'
 import MenuButton from '../components/Menubutton'
 import Level from '../components/level'
 import { useEffect, useRef, useState } from 'react'

@@ -1,4 +1,4 @@
-import '../styles/level.css';
+import '../styles/PlayPage/level.css';
 
 export default function Level(props) {
     const levels = [];
