@@ -87,8 +87,8 @@ const levelsUnlocked = {
                     <MenuButton abbr="character"logo='fas fa-user-alt'/>
                     <MenuButton abbr="badges"logo='fas fa-medal'/>
                     <MenuButton abbr="forum" logo='fas fa-user-friends'/>
-                    <MenuButton abbr="home"logo="fa fa-home" link='/'/>
                     <MenuButton abbr="practice Test Library"logo="fa fa-book"/>
+                    <MenuButton abbr="home"logo="fa fa-home" link='/'/>
                 </nav>
         </div>
     </>
