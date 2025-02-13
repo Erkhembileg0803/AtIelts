@@ -64,7 +64,11 @@ useEffect(() => {
     };
 }, []);
 
-
+const levelsUnlocked = {
+    isListening: true,
+    isReading: false,
+    isWriting: false,
+}
     return <>
     
         <div className="playpage">
@@ -75,9 +79,9 @@ useEffect(() => {
                 onMouseUp={HandleMouseUp}
                 onMouseMove={HandleMouseMove}  
                 >
-                    <Level length="9" skill="Listening"/>
-                    <Level length="11" skill="Reading"/>
-                    <Level length="10" skill="Writing"/>
+                    <Level length="9" skill="Listening"isOpen={levelsUnlocked.isListening}/>
+                    <Level length="11" skill="Reading"isOpen={levelsUnlocked.isReading}/>
+                    <Level length="10" skill="Writing"isOpen={levelsUnlocked.isWriting}/>
                 </div>
                 <nav>
                     <MenuButton abbr="character"logo='fas fa-user-alt'/>

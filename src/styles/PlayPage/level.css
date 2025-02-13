@@ -4,7 +4,26 @@
     grid-template-columns: repeat(13, 200px);
     width: 100%;
 }
-
+.closed{
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3px);
+    border: 1px solid black;
+}
+.closedbtn{
+    filter: blur(5px);
+}
+.closed::after{
+    content: 'Closed';
+    color: white;
+    font-size: 5rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
 .skill .btnContainer{
     display: flex;
     align-items: center;
@@ -43,7 +62,7 @@
 .skill .btnContainer::after{
     content: '';
     background-color: red;
-    width: 100%;
+    width: 102%;
     right: 0;
     position: absolute;
     height: 8px;
