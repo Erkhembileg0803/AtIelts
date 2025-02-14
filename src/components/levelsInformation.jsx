@@ -1,7 +1,15 @@
 const Information = {
-    Reading: {
-        
+    Listening: {
+        LevelsUnlocked : true,
+        Levels : [
+            LevelOne = [
+                id = 1,
+                unlocked = true,
+                paragraphs = [],
+                video = '',
+                questions = [],
+            ],
+        ]
     },
-    Listening: "",
-    Writing: "",
+
 }

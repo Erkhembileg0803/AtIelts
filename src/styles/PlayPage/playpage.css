@@ -29,7 +29,8 @@
     overflow-x: auto;
     user-select: none;
     width: auto;
-    cursor: pointer;
+    cursor:col-resize;
+    
     scrollbar-color: transparent transparent;
 }
 .playpage nav{

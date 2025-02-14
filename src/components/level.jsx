@@ -1,7 +1,7 @@
 import '../styles/PlayPage/level.css';
-
+import { Link } from 'react-router-dom'
 export default function Level(props) {
-
+   
     const isOpen = props.isOpen;
     const levels = [];
     const numberMapping = [
@@ -24,10 +24,9 @@ export default function Level(props) {
 }
 
 function LevelButton(props) {
-    const isOpen = props.isOpen;
     return (
-        <div className={isOpen ? "btnContainer" : "btnContainer closedbtn"} id={props.id}>
-            <div className="outer"></div>
+        <div className="btnContainer"id={props.id}>
+            <Link to='/play/test' className="outer"></Link>
             <div className="inner"></div>
             <div className="plate"></div>
         </div>

@@ -3,6 +3,7 @@ import MenuButton from '../components/Menubutton'
 import Level from '../components/level'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+
 export default function Islands(){
 const containerRef = useRef(null);
 const [isMouseDown, setIsMouseDown] = useState(false);
@@ -64,11 +65,7 @@ useEffect(() => {
     };
 }, []);
 
-const levelsUnlocked = {
-    isListening: true,
-    isReading: false,
-    isWriting: false,
-}
+
     return <>
     
         <div className="playpage">
@@ -79,9 +76,9 @@ const levelsUnlocked = {
                 onMouseUp={HandleMouseUp}
                 onMouseMove={HandleMouseMove}  
                 >
-                    <Level length="9" skill="Listening"isOpen={levelsUnlocked.isListening}/>
-                    <Level length="11" skill="Reading"isOpen={levelsUnlocked.isReading}/>
-                    <Level length="10" skill="Writing"isOpen={levelsUnlocked.isWriting}/>
+                    <Level length="9" skill="Listening"isOpen={true}/>
+                    <Level length="11" skill="Reading"isOpen={true}/>
+                    <Level length="10" skill="Writing"isOpen={true}/>
                 </div>
                 <nav>
                     <MenuButton abbr="character"logo='fas fa-user-alt'/>

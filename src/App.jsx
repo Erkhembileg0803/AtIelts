@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import PlayPage from './pages/playpage';
 import { useRef } from 'react';
-
+import Test from './pages/test'
 function App() {
   return (
     <Router/>
@@ -45,6 +45,7 @@ function Router(){
       }>
       </Route>
       <Route path='/play' element={<PlayPage/>}></Route>
+      <Route path='/play/test' element={<Test/>}></Route>
       </Routes>    
   </BrowserRouter>
 }

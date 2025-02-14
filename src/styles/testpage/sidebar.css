@@ -1,0 +1,7 @@
+.sidebar{
+    background-color: white;
+}
+.sidebar .profile{
+    background-color: var(--primary);
+    height: 80px;
+}
