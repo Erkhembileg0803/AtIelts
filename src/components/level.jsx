@@ -1,4 +1,4 @@
-import '../styles/PlayPage/level.css';
+import '../styles/PlayPage/level.scss';
 import { Link } from 'react-router-dom'
 export default function Level(props) {
    

@@ -1,4 +1,4 @@
-import '../styles/PlayPage/playpage.css'
+import '../styles/PlayPage/playpage.scss'
 import MenuButton from '../components/Menubutton'
 import Level from '../components/level'
 import { useEffect, useRef, useState } from 'react'
@@ -9,7 +9,7 @@ const containerRef = useRef(null);
 const [isMouseDown, setIsMouseDown] = useState(false);
 const [startX, setStartX] = useState(0);
 const [scrollLeft, setScrollLeft] = useState(0);
-const animationRef = useRef(null); // Stores animation frame ID
+const animationRef = useRef(null); 
 
 const HandleMouseDown = (e) => {
     setIsMouseDown(true);
@@ -20,7 +20,7 @@ const HandleMouseDown = (e) => {
 
 const HandleMouseLeave = () => {
     setIsMouseDown(false);
-    cancelAnimationFrame(animationRef.current); // Stop animation
+    cancelAnimationFrame(animationRef.current); 
 };
 
 const HandleMouseUp = () => {
@@ -77,8 +77,8 @@ useEffect(() => {
                 onMouseMove={HandleMouseMove}  
                 >
                     <Level length="9" skill="Listening"isOpen={true}/>
-                    <Level length="11" skill="Reading"isOpen={true}/>
-                    <Level length="10" skill="Writing"isOpen={true}/>
+                    <Level length="11" skill="Reading"isOpen={false}/>
+                    <Level length="10" skill="Writing"isOpen={false}/>
                 </div>
                 <nav>
                     <MenuButton abbr="character"logo='fas fa-user-alt'/>
@@ -87,6 +87,7 @@ useEffect(() => {
                     <MenuButton abbr="practice Test Library"logo="fa fa-book"/>
                     <MenuButton abbr="home"logo="fa fa-home" link='/'/>
                 </nav>
+                
         </div>
     </>
 }

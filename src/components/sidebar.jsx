@@ -1,4 +1,4 @@
-import '../styles/testpage/sidebar.css'
+import '../styles/sidebar.scss'
 import { Link } from 'react-router-dom'
 export default function SideBar(){
     return <nav className="sidebar">

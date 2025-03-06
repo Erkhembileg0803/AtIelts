@@ -1,10 +1,7 @@
 import SideBar from '../components/sidebar'
-import '../styles/testpage/test.css'
+import '../styles/testpage/test.scss'
 export default function Test(){
     return <div className="test">
-        <SideBar/>
-        <div className="testpage">
-            
-        </div>
+        
     </div>
 }

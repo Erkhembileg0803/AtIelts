@@ -1,0 +1,5 @@
+@import '../mixins.scss';
+.test{
+    @include size(100vh,100vw,var(--white),black);
+    @include grid(initial,300px 1fr,initial,initial,initial);
+}

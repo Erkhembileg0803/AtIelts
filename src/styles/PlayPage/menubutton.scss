@@ -1,0 +1,48 @@
+@import '../mixins.scss';
+
+.menubutton{
+    @include size(95px,95px,linear-gradient(gray,rgb(201, 200, 200)),black);
+    @include flex(center,center,row,initial);
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+
+    .abbr{
+        position: absolute;
+        @include size(auto,auto,rgba(0,0,0,0.8),white);
+        bottom: 105px;
+        padding: 10px;
+        min-height: 30px;
+        text-align: center;
+        opacity: 0;
+        font-size: 1.3rem;
+    }
+
+    .rect{
+        @include size(80%,80%,var(--primary),initial);
+        @include flex(center,center,row,initial);
+        border-radius: 15px;
+
+        i{
+            font-size: 4rem;
+            color: var(--white);
+        }
+    }
+}
+.menubutton:hover{
+    .abbr{
+    opacity: 1;
+    transition: all 0.3s ease;
+    }
+}
+
+
+@media only screen and (max-width:760px){
+    .menubutton{
+        height: 70px;
+        width: 70px;
+    }
+    .menubutton .rect i{
+        font-size: 3rem;
+    }
+}

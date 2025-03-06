@@ -1,9 +1,9 @@
 import Header from './components/header'
-import './App.css';
+import './App.scss';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import PlayPage from './pages/playpage';
-import { useRef } from 'react';
+import Footer from './components/Footer'
 import Test from './pages/test'
 function App() {
   return (
@@ -12,11 +12,7 @@ function App() {
 }
 
 function HomePage(){
-  const homepage = useRef(null)
-  const handleMouseDown = e => {
-    e.preventDefault();
-  } 
-  return <div className='homepage'ref={homepage} onMouseDown={handleMouseDown}>
+  return <div className='homepage' onMouseDown={(e) => e.preventDefault()}>
       <div className="intro">
         <span className="textcontainer">
           <span className='text'>
@@ -40,6 +36,7 @@ function Router(){
           <div className='App'>
         <Header/>
         <HomePage/>
+        <Footer/>
          </div>
         </>
       }>

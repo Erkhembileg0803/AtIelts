@@ -1,10 +1,10 @@
-import '../styles/footer.css'
+import '../styles/footer.scss'
 function Footer(){
     return <footer>
             <hr />
             <ul className="footer-text">
-            <li>&copy; AtIelts 2025</li>
+             <li>&copy; AtIelts 2025</li>
             </ul>
-        </footer>
+           </footer>
 }
 export default Footer;

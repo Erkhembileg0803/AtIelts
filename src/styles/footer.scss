@@ -1,0 +1,20 @@
+@import './mixins.scss';
+footer{
+    grid-area: footer;
+    @include flex(center,center,column,0);
+    height: 60px;
+    hr{
+        width: 80%;
+        margin: 0 auto;
+        border: 1px solid var(--blue-light);
+    }
+    .footer-text{
+        @include size(90%,100%,initial,white);
+        @include flex(center,space-evenly,row,0);
+        list-style: none;
+        li{
+            font-family: sans-serif;
+        }
+    }
+}
+
